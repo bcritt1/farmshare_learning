@@ -1,3 +1,33 @@
 [submodule "scripts/ocr"]
 	path = scripts/ocr
 	url = https://github.com/bcritt1/ocr.git
+[submodule "scripts/transcribe"]
+	path = scripts/transcribe
+	url = https://github.com/bcritt1/transcribe.git
+[submodule "scripts/llms"]
+	path = scripts/llms
+	url = https://github.com/bcritt1/llms.git
+[submodule "scripts/text_cleaning"]
+	path = scripts/text_cleaning
+	url = https://github.com/bcritt1/text_cleaning.git
+[submodule "scripts/tfidf_python"]
+	path = scripts/tfidf_python
+	url = https://github.com/bcritt1/tfidf_python.git
+[submodule "scripts/tokenizer_python_nltk"]
+	path = scripts/tokenizer_python_nltk
+	url = https://github.com/bcritt1/tokenizer_python_nltk.git
+[submodule "scripts/tokenizer_r"]
+	path = scripts/tokenizer_r
+	url = https://github.com/bcritt1/tokenizer_r.git
+[submodule "scripts/transfer_learning"]
+	path = scripts/transfer_learning
+	url = https://github.com/bcritt1/transfer_learning.git
+[submodule "scripts/translate"]
+	path = scripts/translate
+	url = https://github.com/bcritt1/translate.git
+[submodule "scripts/word_embedding_python"]
+	path = scripts/word_embedding_python
+	url = https://github.com/bcritt1/word_embedding_python.git
+[submodule "scripts/word_embedding_r"]
+	path = scripts/word_embedding_r
+	url = https://github.com/bcritt1/word_embedding_r.git
