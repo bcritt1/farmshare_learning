@@ -1,0 +1,27 @@
+install.packages('hathidy', repos='http://cran.us.r-project.org')
+install.packages('ggplot2', repos='http://cran.us.r-project.org')
+install.packages('dplyr', repos='http://cran.us.r-project.org')
+install.packages('tidytext', repos='http://cran.us.r-project.org')
+install.packages('stringr', repos='http://cran.us.r-project.org')
+install.packages('purrr', repos='http://cran.us.r-project.org')
+install.packages('tidyr', repos='http://cran.us.r-project.org')
+
+library(hathidy)
+library(ggplot2)
+library(dplyr)
+library(tidytext)
+library(stringr)
+library(purrr)
+library(tidyr)
+
+options('hathidy_dir = /farmshare/learning/data/hathi/pres_speeches)
+pres <- c('mdp.49015002221845' 'mdp.49015002221779' 'mdp.49015002221837' 'mdp.49015002221829' 'mdp.49015002203405' 'mdp.49015002221761' 'mdp.49015002221787' 'mdp.49015002203215' 'mdp.49015002203249' 'mdp.49015002221811' 'mdp.49015002203157' 'mdp.49015002203223' 'mdp.49015002203272' 'mdp.49015002203140' 'mdp.49015002203231' 'mdp.49015002203033')
+pres_speeches <- tibble(htid=pres, vol_number = c(NA, 1:16))
+pres_data <- hathi_counts(pres[1:16], cols = c("page", "token")) %>% inner_join(pres_speeches, by =c("htid"))
+pres_data %>%
+  group_by(page, htid, vol_number) %>% 
+  summarize(count=sum(count)) %>%
+  ggplot() + 
+  geom_tile(aes(x=page, y = vol_number, fill = count)) +
+  scale_fill_viridis_c("Words on page") + 
+  labs(title = "Pres Speeches, words per page by speech (yes this is meaningless).")
